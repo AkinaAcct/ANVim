@@ -102,3 +102,6 @@ end
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
+
+-- Markdown-Preview
+vim.g.mkdp_open_ip = '127.0.0.1:4444'

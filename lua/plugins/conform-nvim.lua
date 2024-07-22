@@ -21,10 +21,7 @@ return {
                 priority = 100,
                 primary = true,
                 format = function(buf)
-                    local plugin = require("lazy.core.config").plugins["conform.nvim"]
-                    local Plugin = require("lazy.core.plugin")
-                    local opts = Plugin.values(plugin, "opts", false)
-                    require("conform").format(LazyVim.merge({}, opts.format, { bufnr = buf }))
+                    require("conform").format({ bufnr = buf })
                 end,
                 sources = function(buf)
                     local ret = require("conform").list_formatters(buf)
@@ -37,16 +34,22 @@ return {
         end)
     end,
     opts = function()
-        ---@class ConformOpts
+        local plugin = require("lazy.core.config").plugins["conform.nvim"]
+        if plugin.config ~= M.setup then
+            LazyVim.error({
+                "Don't set `plugin.config` for `conform.nvim`.\n",
+                "This will break **LazyVim** formatting.\n",
+                "Please refer to the docs at https://www.lazyvim.org/plugins/formatting",
+            }, { title = "LazyVim" })
+        end
+        ---@type conform.setupOpts
         local opts = {
-            -- LazyVim will use these options when formatting with the conform.nvim formatter
-            format = {
+            default_format_opts = {
                 timeout_ms = 3000,
-                async = false, -- not recommended to change
-                quiet = false, -- not recommended to change
-                lsp_fallback = true, -- not recommended to change
+                async = false,   -- not recommended to change
+                quiet = false,   -- not recommended to change
+                lsp_format = "fallback", -- not recommended to change
             },
-            ---@type table<string, conform.FormatterUnit[]>
             formatters_by_ft = {
                 lua = { "stylua" },
                 fish = { "fish_indent" },
@@ -74,5 +77,5 @@ return {
         }
         return opts
     end,
-    --  config = M.setup,
+    -- config = M.setup,
 }
