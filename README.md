@@ -12,6 +12,7 @@
 Just simply clone this repo to nvim's config dir:
 
 ```shell
+mv ~/.config/nvim{,.bak}  # Back up your old configuration
 git clone https://github.com/AkinaAcct/ANVim.git ${HOME}/.config/nvim
 ```
 
