@@ -1,13 +1,27 @@
-**Attention! This is not an official version of LazyVim! This version has some optimizations for my usage habits! If you don't like it, please use the official original version.**
-
----
-
-# 💤 LazyVim
+<div style="text-align: center;">
+  <h1>ANVim</h1>
+  <h3>A preconfigured LazyVim-based NeoVim modified by Akina.</h3>
+</div>
 
 > [!NOTE]
-> NeoVim versions below 0.10 are not supported.
+> NeoVim versions below 0.10 are not supported.  
+> We fully dropped [neodev.nvim](https://github.com/folke/neodev.nvim), and use [lazydev.nvim](https://github.com/folke/lazydev.nvim) instead.
 
 > [!WARNING]
-> Unstable. May be updated at any time.
+> Unstable. May be updated at any time.  
 
-*Anyway thanks for your using!*
+## Installation
+
+Just simply clone this repo to nvim's config dir:
+
+```shell
+git clone https://github.com/AkinaAcct/ANVim.git ${HOME}/.config/nvim
+```
+
+After this, enter nvim and wait for the plugin to be installed, and you have completed the ANVim installation.
+
+## Usage
+
+As we said, ANVim is based on [LazyVim](https://github.com/LazyVim/LazyVim), so ANVim's key mapping is not very different from LazyVim's and you can get started very quickly.
+
+In fact, you can even refer directly to LazyVim's documentation to make some modifications to ANVim.
