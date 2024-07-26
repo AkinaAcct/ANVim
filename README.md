@@ -1,7 +1,4 @@
-<div style="text-align: center;">
-  <h1>ANVim</h1>
-  <h3>A preconfigured LazyVim-based NeoVim modified by Akina.</h3>
-</div>
+# ANVim
 
 > [!NOTE]
 > NeoVim versions below 0.10 are not supported.  
@@ -22,6 +19,6 @@ After this, enter nvim and wait for the plugin to be installed, and you have com
 
 ## Usage
 
-As we said, ANVim is based on [LazyVim](https://github.com/LazyVim/LazyVim), so ANVim's key mapping is not very different from LazyVim's and you can get started very quickly.
+ANVim is based on [LazyVim](https://github.com/LazyVim/LazyVim), so ANVim's key mapping is not very different from LazyVim's and you can get started very quickly.
 
 In fact, you can even refer directly to LazyVim's documentation to make some modifications to ANVim.
