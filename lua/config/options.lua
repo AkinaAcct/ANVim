@@ -67,7 +67,7 @@ opt.relativenumber = false -- Relative line numbers
 opt.scrolloff = 1 -- Lines of context
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 opt.shiftround = true -- Round indent
-opt.shiftwidth = 2 -- Size of an indent
+opt.shiftwidth = 4 -- Size of an indent
 opt.shortmess:append({ W = true, I = true, c = true, C = true })
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.sidescrolloff = 8 -- Columns of context
@@ -79,7 +79,7 @@ opt.splitbelow = true -- Put new windows below current
 opt.splitkeep = "screen"
 opt.splitright = true -- Put new windows right of current
 opt.statuscolumn = [[%!v:lua.require'lazyvim.util'.ui.statuscolumn()]]
-opt.tabstop = 2 -- Number of spaces tabs count for
+opt.tabstop = 4 -- Number of spaces tabs count for
 opt.termguicolors = true -- True color support
 opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key
 opt.undofile = true
@@ -88,7 +88,7 @@ opt.updatetime = 200 -- Save swap file and trigger CursorHold
 opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
 opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5 -- Minimum window width
-opt.wrap = true -- Disable line wrap
+opt.wrap = true -- Eisable line wrap
 
 if vim.fn.has("nvim-0.10") == 1 then
   opt.smoothscroll = true
