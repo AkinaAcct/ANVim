@@ -15,6 +15,7 @@ return {
             "markdown-toc",
             "black",
             "lua-language-server",
+            "gitui",
         },
     },
     ---@param opts MasonSettings | {ensure_installed: string[]}
