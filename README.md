@@ -3,7 +3,6 @@
 > [!NOTE]
 > NeoVim versions below 0.10 are not supported.  
 > We fully dropped [neodev.nvim](https://github.com/folke/neodev.nvim), and use [lazydev.nvim](https://github.com/folke/lazydev.nvim) instead.
-
 > [!WARNING]
 > Unstable. May be updated at any time.  
 
