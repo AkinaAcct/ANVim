@@ -18,6 +18,9 @@ git clone https://github.com/AkinaAcct/ANVim.git ${HOME}/.config/nvim
 
 After this, enter nvim and wait for the plugin to be installed, and you have completed the ANVim installation.
 
+> [!NOTE]
+> If you need a more stable version, use the version with the release tag.
+
 ## Usage
 
 ANVim is based on [LazyVim](https://github.com/LazyVim/LazyVim), so ANVim's key mapping is not very different from LazyVim's and you can get started very quickly.

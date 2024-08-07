@@ -56,6 +56,8 @@ return {
                 sh = { "shfmt" },
                 py = { "black" },
                 python = { "black" },
+                md = { "markdownlint-cli2" },
+                markdown = { "markdownlint-cli2" },
             },
             -- The options you set here will be merged with the builtin formatters.
             -- You can also define any custom formatters here.

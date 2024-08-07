@@ -13,6 +13,7 @@ return {
             "bash-language-server",
             "markdownlint-cli2",
             "markdown-toc",
+            "marksman",
             "black",
             "lua-language-server",
             "gitui",
