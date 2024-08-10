@@ -162,3 +162,41 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+local function insert_file_header()
+  local filename = vim.fn.expand('%:t')
+  local date = os.date('%Y-%m-%d')
+  
+  local author = vim.fn.system("git config user.name")
+  author = author:gsub("\n", "")
+  
+  local header_lines = {
+    string.format("File: %s", filename),
+    string.format("Author: %s", author),
+    string.format("Date: %s", date),
+    "Description: "
+  }
+  
+  local max_length = 0
+  for _, line in ipairs(header_lines) do
+    if #line > max_length then
+      max_length = #line
+    end
+  end
+  
+  local border_length = max_length + 2  -- 1 for space, 1 for `#`
+  local border_line = string.rep("#", border_length)
+  
+  local header = border_line .. "\n"
+  for _, line in ipairs(header_lines) do
+    local padded_line = "# " .. line  -- 左侧带 `#` 和空格，右侧不需要 `#`
+    header = header .. padded_line .. "\n"
+  end
+  header = header .. border_line .. "\n"
+  
+  vim.api.nvim_buf_set_lines(0, 0, 0, false, vim.split(header, '\n'))
+end
+
+vim.api.nvim_create_autocmd("BufNewFile", {
+  pattern = "*",
+  callback = insert_file_header,
+})
