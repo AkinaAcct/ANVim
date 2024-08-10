@@ -17,6 +17,8 @@ return {
             "black",
             "lua-language-server",
             "gitui",
+            "json-lsp"
+            "prettierd"
         },
     },
     ---@param opts MasonSettings | {ensure_installed: string[]}

@@ -58,6 +58,7 @@ return {
                 python = { "black" },
                 md = { "markdownlint-cli2" },
                 markdown = { "markdownlint-cli2" },
+                json = { "prettierd" }
             },
             -- The options you set here will be merged with the builtin formatters.
             -- You can also define any custom formatters here.
