@@ -102,3 +102,6 @@ end
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
+
+-- Auto insert header
+vim.g.enable_file_header = false

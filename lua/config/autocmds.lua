@@ -196,7 +196,10 @@ local function insert_file_header()
   vim.api.nvim_buf_set_lines(0, 0, 0, false, vim.split(header, '\n'))
 end
 
-vim.api.nvim_create_autocmd("BufNewFile", {
-  pattern = "*",
-  callback = insert_file_header,
-})
+-- 根据配置选项决定是否启用文件头插入功能
+if vim.g.enable_file_header then
+  vim.api.nvim_create_autocmd("BufNewFile", {
+    pattern = "*",
+    callback = insert_file_header,
+  })
+end
