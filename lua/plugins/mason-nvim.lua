@@ -17,7 +17,7 @@ return {
             "black",
             "lua-language-server",
             "gitui",
-            "json-lsp"
+            "json-lsp",
             "prettierd"
         },
     },
