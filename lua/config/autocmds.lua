@@ -1,17 +1,18 @@
--- 获取 Neovim 版本信息
+-- get Neovim version
 local nvim_version = vim.version()
 
--- 检查主要版本和次要版本
+-- check version
+-- if lower than 0.10, then exit
 if nvim_version.major < 0 or (nvim_version.major == 0 and nvim_version.minor < 10) then
-    -- 显示错误信息
+    -- show err msg
     vim.api.nvim_err_writeln("[FATAL]: Neovim version 0.10 or higher is required!")
 
-    -- 等待用户按回车键
+    -- wait Enter
     print("Press Enter to exit Neovim...")
     vim.fn.input("")
 
-    -- 退出 Neovim
-    vim.cmd("qa!") -- 立即退出 Neovim
+    -- exit Neovim
+    vim.cmd("qa!")
 end
 
 -- This file is automatically loaded by lazyvim.config.init.
@@ -188,7 +189,7 @@ local function insert_file_header()
   
   local header = border_line .. "\n"
   for _, line in ipairs(header_lines) do
-    local padded_line = "# " .. line  -- 左侧带 `#` 和空格，右侧不需要 `#`
+    local padded_line = "# " .. line  -- remove # in right side
     header = header .. padded_line .. "\n"
   end
   header = header .. border_line .. "\n"
@@ -196,7 +197,7 @@ local function insert_file_header()
   vim.api.nvim_buf_set_lines(0, 0, 0, false, vim.split(header, '\n'))
 end
 
--- 根据配置选项决定是否启用文件头插入功能
+-- check config for whether enable_file_header
 if vim.g.enable_file_header then
   vim.api.nvim_create_autocmd("BufNewFile", {
     pattern = "*",
