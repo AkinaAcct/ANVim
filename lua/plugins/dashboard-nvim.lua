@@ -9,7 +9,7 @@ return {
 ██╔══██║██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║
 ██║  ██║██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║
 ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
-A modified version by Akina based on LazyVim
+A pre-configured nvim based on LazyVim
   ]]
   -- http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=ANVim%20
     logo = string.rep("\n", 8) .. logo .. "\n\n"
@@ -38,7 +38,7 @@ A modified version by Akina based on LazyVim
         footer = function()
           local stats = require("lazy").stats()
           local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-          return { "⚡ ANVim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
+          return { " ANVim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
         end,
       },
     }
