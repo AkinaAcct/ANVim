@@ -2,7 +2,7 @@ return {
   "lukas-reineke/indent-blankline.nvim",
   event = "LazyFile",
   opts = function()
-    LazyVim.toggle.map("<leader>ug", {
+    Snacks.toggle({
       name = "Indention Guides",
       get = function()
         return require("ibl.config").get_config(0).enabled
@@ -10,27 +10,29 @@ return {
       set = function(state)
         require("ibl").setup_buffer(0, { enabled = state })
       end,
-    })
+    }):map("<leader>ug")
 
     return {
       indent = {
         char = "│",
         tab_char = "│",
       },
-      scope = { show_start = true, show_end = false },
+      scope = { show_start = false, show_end = false },
       exclude = {
         filetypes = {
-          "help",
+          "Trouble",
           "alpha",
           "dashboard",
-          "neo-tree",
-          "Trouble",
-          "trouble",
+          "help",
           "lazy",
           "mason",
+          "neo-tree",
           "notify",
+          "snacks_notif",
+          "snacks_terminal",
+          "snacks_win",
           "toggleterm",
-          "lazyterm",
+          "trouble",
         },
       },
     }

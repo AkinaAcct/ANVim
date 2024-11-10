@@ -1,13 +1,13 @@
 return {
-    "folke/lazydev.nvim",
-    ft = "lua",
-    opts = function()
-        return {
-            library = {
-                uv = "luvit-meta/library",
-                lazyvim = "LazyVim",
-            },
-        }
-    end,
+  "folke/lazydev.nvim",
+  ft = "lua",
+  cmd = "LazyDev",
+  opts = {
+    library = {
+      { path = "luvit-meta/library", words = { "vim%.uv" } },
+      { path = "LazyVim", words = { "LazyVim" } },
+      { path = "snacks.nvim", words = { "Snacks" } },
+      { path = "lazy.nvim", words = { "LazyVim" } },
+    },
+  },
 }
-
