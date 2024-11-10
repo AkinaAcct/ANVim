@@ -1,4 +1,4 @@
-return{
-  "sindrets/diffview.nvim",
-  event = "BufRead",
+return {
+    "sindrets/diffview.nvim",
+    event = "BufRead",
 }
