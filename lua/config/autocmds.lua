@@ -142,9 +142,19 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     end,
 })
 
+-- Automatically insert a file header when creating a new file
 local function insert_file_header()
+    -- Check if border char is set
+    if not vim.g.header_border_char or vim.g.header_border_char == "" then
+        vim.notify(
+            "Warning: `vim.g.header_border_char` is not set. Using default border `#`. Set it in `lua/config/option.lua`.",
+            vim.log.levels.WARN
+        )
+        vim.g.header_border_char = "#" -- Set the default border char
+    end
+
     local filename = vim.fn.expand('%:t')
-    local date = os.date('%Y-%m-%d')
+    local date = os.date('%Y-%m-%d %H:%M')
 
     local author = vim.fn.system("git config user.name")
     author = author:gsub("\n", "")
@@ -163,12 +173,14 @@ local function insert_file_header()
         end
     end
 
-    local border_length = max_length + 2 -- 1 for space, 1 for `#`
-    local border_line = string.rep("#", border_length)
+    -- Dynamically obtain border char
+    local border_char = vim.g.header_border_char or "#"
+    local border_length = max_length + 2 -- 1 for space, 1 for border_char
+    local border_line = string.rep(border_char, border_length)
 
     local header = border_line .. "\n"
     for _, line in ipairs(header_lines) do
-        local padded_line = "# " .. line -- remove # in right side
+        local padded_line = border_char .. " " .. line
         header = header .. padded_line .. "\n"
     end
     header = header .. border_line .. "\n"
@@ -176,10 +188,11 @@ local function insert_file_header()
     vim.api.nvim_buf_set_lines(0, 0, 0, false, vim.split(header, '\n'))
 end
 
--- check config for whether enable_file_header
+-- Check whether automatic file header insertion is enabled
 if vim.g.enable_file_header then
     vim.api.nvim_create_autocmd("BufNewFile", {
         pattern = "*",
         callback = insert_file_header,
     })
 end
+
