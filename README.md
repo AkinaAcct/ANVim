@@ -1,18 +1,6 @@
-# ANVim
+![socialify](https://socialify.git.ci/AkinaAcct/ANVim/image?description=1&forks=1&issues=1&name=1&owner=1&pulls=1&stargazers=1&theme=Dark)
 
-``` lua
-      ___           ___           ___                       ___     
-     /\  \         /\__\         /\__\          ___        /\__\    
-    /::\  \       /::|  |       /:/  /         /\  \      /::|  |   
-   /:/\:\  \     /:|:|  |      /:/  /          \:\  \    /:|:|  |   
-  /::\~\:\  \   /:/|:|  |__   /:/__/  ___      /::\__\  /:/|:|__|__ 
- /:/\:\ \:\__\ /:/ |:| /\__\  |:|  | /\__\  __/:/\/__/ /:/ |::::\__\
- \/__\:\/:/  / \/__|:|/:/  /  |:|  |/:/  / /\/:/  /    \/__/~~/:/  /
-      \::/  /      |:/:/  /   |:|__/:/  /  \::/__/           /:/  / 
-      /:/  /       |::/  /     \::::/__/    \:\__\          /:/  /  
-     /:/  /        /:/  /       ~~~~         \/__/         /:/  /   
-     \/__/         \/__/                                   \/__/
-```
+# ANVim
 
 > [!NOTE]
 > NeoVim versions below 0.10 are not supported.  
@@ -31,9 +19,6 @@ git clone https://github.com/AkinaAcct/ANVim.git ${HOME}/.config/nvim
 ```
 
 After this, enter nvim and wait for the plugin to be installed, and you have completed the ANVim installation.
-
-> [!NOTE]
-> If you need a more stable version, use the version with the release tag.
 
 ## Usage
 
